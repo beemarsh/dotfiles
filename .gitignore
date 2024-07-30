@@ -26,6 +26,7 @@
 !.config/i3/*
 !.config/polybar
 !.config/polybar/*
+!.config/polybar/scripts/*
 !.config/rofi
 !.config/rofi/*
 !.config/zsh
