@@ -21,7 +21,6 @@
 !.icons/*
 
 #Don't ignore the following config files
-.config/*
 !.config
 !.config/i3
 !.config/i3/*

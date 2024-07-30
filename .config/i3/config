@@ -53,7 +53,7 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 
 #Open Power menu
 #Press Alt+F4 for Power Menu
-bindsym $mod+F4 exec --no-startup-id $HOME/.config/polybar/material/scripts/powermenu.sh
+bindsym $mod+F4 exec --no-startup-id $HOME/.config/polybar/scripts/powermenu.sh
 
 #Open Wifi Menu
 bindsym $mod+w exec --no-startup-id wifimenu
@@ -232,7 +232,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 #Start Polybar
-exec_always $HOME/.config/polybar/material/launch.sh
+exec_always $HOME/.config/polybar/launch.sh
 
 #Lock the screen on presing the lock key (Mine is F10)
 bindsym F10 exec xsecurelock
