@@ -1,0 +1,2 @@
+#setting launcher for clipmenu
+export CM_LAUNCHER=rofi

@@ -1,0 +1,33 @@
+*
+!.Xauthority
+!.Xresources
+!.bash_profile
+!.bashrc
+!.gitignore
+!.p10k.zsh
+!.xinitrc
+!.xprofile
+!.zshrc
+!.README.md
+
+.local/*
+
+# Don't ignore local bin files
+!.local/bin
+!.local/bin/*
+
+# Don't ignore icons
+!.icons
+!.icons/*
+
+#Don't ignore the following config files
+.config/*
+!.config
+!.config/i3
+!.config/i3/*
+!.config/polybar
+!.config/polybar/*
+!.config/rofi
+!.config/rofi/*
+!.config/zsh
+!.config/zsh/*
