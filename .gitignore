@@ -8,7 +8,7 @@
 !.xinitrc
 !.xprofile
 !.zshrc
-!.README.md
+!README.md
 
 .local/*
 
