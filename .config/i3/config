@@ -52,7 +52,7 @@ bindsym $mod+q split toggle kill
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
 #Open Power menu
-#Press Alt+F4 for Power Menu
+#Press Win+F4 for Power Menu
 bindsym $mod+F4 exec --no-startup-id $HOME/.config/polybar/scripts/powermenu.sh
 
 #Open Wifi Menu
@@ -260,7 +260,7 @@ for_window [class="^.*"] border pixel 1
 ## bindsym $mod+Shift+g exec --no-startup-id /usr/local/bin/back4.sh auto $HOME/gif/wallpaper.gif
 
 ## Allow tap from touchpad --> Change the Values inside the quotes based on the results from xinput
-exec xinput set-prop "SYNA2BA6:00 06CB:CEC0 Touchpad" 327 1
+exec xinput set-prop 11 327 1
 
 # Clipboard Manager
 #Run the clipmenud before
