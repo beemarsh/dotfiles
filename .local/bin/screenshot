@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# Take the screeshot using maim and also put it on the clipboard
+# For clipboard, I am using copyq
+
+send_notification() {
+	dunstify -a "Screenshot" -u low -r 9924 -i screenshot "Screenshot" "Screenshot taken and copied to clipboard" -t 2000
+}
+
+screenshot_dir="$HOME/Pictures/Screenshots"
+
+check_dir() {
+	# Check if the directory exists
+	if [ ! -d "$screenshot_dir" ]; then
+		mkdir -p "$screenshot_dir"
+	fi
+}
+
+case $1 in
+full)
+	check_dir
+	# Capture screenshot using maim
+	screenshot_file="$screenshot_dir/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-current.png"
+	maim --format=png -u "$screenshot_file"
+
+	# Add screenshot to CopyQ
+	copyq copy image/png - <"$screenshot_file"
+	send_notification "$1"
+	;;
+focus)
+	#Take Screenhot of the focused screen and put it in the clipboard
+
+	# Capture screenshot using maim
+	screenshot_file="$screenshot_dir/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-focus.png"
+	maim -i --format=png --window $(xdotool getactivewindow) "$screenshot_file"
+	# Add screenshot to CopyQ
+	copyq copy image/png - <"$screenshot_file"
+	;;
+select)
+	#Take Screenhot of the selected screen and put it in the clipboard
+
+	# Capture screenshot using maim
+	screenshot_file="$screenshot_dir/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-selected.png"
+	maim --format=png --select -u "$screenshot_file"
+	# Add screenshot to CopyQ
+	copyq copy image/png - <"$screenshot_file"
+	send_notification up
+	;;
+esac

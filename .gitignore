@@ -10,9 +10,9 @@
 !.zshrc
 !README.md
 
-.local/*
 
 # Don't ignore local bin files
+!.local
 !.local/bin
 !.local/bin/*
 
@@ -31,3 +31,9 @@
 !.config/rofi/*
 !.config/zsh
 !.config/zsh/*
+!.config/dunst
+!.config/dunst/*
+!.config/systemd
+!.config/systemd/user
+!.config/systemd/user/*
+

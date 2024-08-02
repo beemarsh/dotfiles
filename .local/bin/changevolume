@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# Increment, decrement, or mute the volume and send a notification
+# of the current volume level.
+
+send_notification() {
+	volume=$(pactl list sinks | grep 'Volume:' | awk '{print $5}' | head -n 1 | sed 's/%//')
+	dunstify -a "changevolume" -u low -r 9993 -h int:value:"$volume" -i "volume" "Volume" "Currently at ${volume}%" -t 2000
+}
+
+case $1 in
+up)
+	# Set the volume on (if it was muted)
+	pactl -- set-sink-volume 0 +5%
+	send_notification "$1"
+	;;
+down)
+	pactl -- set-sink-volume 0 -5%
+	send_notification "$1"
+	;;
+mute)
+	amixer set Master toggle
+	mute_status=$(amixer get Master | tail -n 1 | grep -c '\[on\]')
+	if [[ "$mute_status" == 0 ]]; then
+		dunstify -a "changevolume" -t 2000 -r 9993 -u low -i "mute" "Volume" "Currently muted"
+	else
+		send_notification up
+	fi
+	;;
+esac

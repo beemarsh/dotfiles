@@ -5,10 +5,6 @@ Hi! I have configured the code for Arch on a HiDPI display. You can configure it
 ### X not Wayland
 >I chose X because I found it easy to configure with Nvidia drivers.
 
-## Audio Setup
-I setup my Sound System as described in the [Arch Wiki](https://wiki.archlinux.org/title/Sound_system). I installed [PulseAudio](https://wiki.archlinux.org/title/PulseAudio) sound server and other extra pulseaudio modules like [pulseaudio-alsa](https://archlinux.org/packages/?name=pulseaudio-alsa) and [pulseaudio-bluetooth](https://archlinux.org/packages/?name=pulseaudio-bluetooth).
-
-## Bluetooth Setup
 
 ## Window Manger
 
@@ -77,4 +73,72 @@ To enable tapping, type:
 xinput set-prop 11 327 1
 ```
 > Note: Make sure you do this everytime you start the X server or put it somewhere in the window manager config. I have put it in i3 config.
+
+
+## Audio Setup
+I setup my Sound System as described in the [Arch Wiki](https://wiki.archlinux.org/title/Sound_system). I installed [PulseAudio](https://wiki.archlinux.org/title/PulseAudio) sound server and other extra pulseaudio modules like [pulseaudio-alsa](https://archlinux.org/packages/?name=pulseaudio-alsa) and [pulseaudio-bluetooth](https://archlinux.org/packages/?name=pulseaudio-bluetooth).
+
+## Microphone setup
+It is the same as audio setup. For a GUI based interface, I installed [PulseAudio Volume Control](https://archlinux.org/packages/?name=pavucontrol). 
+
+## Bluetooth Setup
+Follow the [Arch Wiki](https://wiki.archlinux.org/title/Bluetooth). I installed [bluez](https://archlinux.org/packages/?name=bluez) and [bluez-utils](https://archlinux.org/packages/?name=bluez-utils) packages. 
+For GUI, I installed [blueman](https://archlinux.org/packages/?name=blueman).
+
+## Notification Setup
+Install [dunst](https://wiki.archlinux.org/title/Dunst) package. The configuration for dunst is in .config/dunst/dunstrc
+
+## Charging Notification
+Open the script in [.local/bin/chargingnotify](https://www.github.com/beemarsh/dotfiles/tree/main/.local/bin).
+Change the parameters accordingly. The DBUS_SESSION_ADDRESS might be different.
+
+To get the battery levels, you might have to change the device name. For me, its BAT0.
+Check using the following command:
+```bash
+ls -a /sys/class/power_supply
+```
+Check the script and after it works properly, you have to setup [udev rules](https://wiki.archlinux.org/title/Udev).
+
+In /etc/udev/rules.d/charging.rules, put the following code.
+```bash
+# Rule for when switching to battery
+ACTION=="change", SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}=="0", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/iambee/.Xauthority" RUN+="/usr/bin/su iambee -c '/home/iambee/.local/bin/chargingnotify 0'"
+
+# Rule for when switching to AC
+ACTION=="change", SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}=="1", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/iambee/.Xauthority" RUN+="/usr/bin/su iambee -c '/home/iambee/.local/bin/chargingnotify 1'"
+```
+
+**Reload** udev rule using:
+```bash
+sudo udevadm control --reload-rules
+```
+>Remember to change the attributes and values based on your device. The attributes might be different. To check the attributes for a device use the following
+```
+sudo udevadm info -a /sys/class/power_supply/ADP0
+```
+
+## Low Battery and Full Battery Notification
+The script for battery notification is in [.local/bin/batterynotify](https://www.github.com/beemarsh/iambee/dotfiles/tree/main/.local/bin).
+Then, you have to make systemctl services and timers. They are available in [~/.config/systemd/user/](https://www.github.com/beemarsh/dotfiles/tree/main/.config/systemd/user). 
+After putting the services and timers in place, load and start it.
+```bash
+systemctl --user daemon-reload
+systemctl --user enable --now alert-battery.timer
+
+# Optionally check that the timer is active
+systemctl --user list-timers
+```
+
+
+## Taking Screenshot
+
+
+## Common Applications
+- [GIMP](https://wiki.archlinux.org/title/GIMP) for Image Editing
+- [Feh](https://wiki.archlinux.org/title/Feh) for image view.
+
+## Some Issues
+- ### Firefox cannot save files
+> Change ownership of the directory. It might be set to root. Change ownership using chown to current user
+
 

@@ -30,8 +30,8 @@ exec --no-startup-id dex --autostart --environment i3
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id changevolume mute 
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle 
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle 
+bindsym XF86AudioMicMute exec --no-startup-id amixer set Capture toggle
 
 #Change Brightness Up and Down using brightnessctl
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
@@ -183,47 +183,31 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
+#Default workspace layout
+workspace_layout default
 
-#                       border              background         text                 indicator
-# Color Variables
-set $rosewater #f4dbd6
-set $flamingo  #f0c6c6
-set $pink      #f5bde6
-set $mauve     #c6a0f6
-set $red       #ed8796
-set $maroon    #ee99a0
-set $peach     #f5a97f
-set $green     #a6da95
-set $teal      #8bd5ca
-set $sky       #91d7e3
-set $sapphire  #7dc4e4
-set $blue      #8aadf4
-set $lavender  #b7bdf8
-set $text      #cad3f5
-set $subtext1  #b8c0e0
-set $subtext0  #a5adcb
-set $overlay2  #939ab7
-set $overlay1  #8087a2
-set $overlay0  #6e738d
-set $surface2  #5b6078
-set $surface1  #494d64
-set $surface0  #363a4f
-set $base      #24273a
-set $mantle    #1e2030
-set $crust     #181926
+#Default Orientation
+default_orientation vertical
+
+#Focus follows mouse
+focus_follows_mouse yes
 
 # Configure Borders
-client.focused              $blue    $base $text  $blue $blue
-client.focused_inactive     $text    $base $text  $crust $crust
-client.unfocused            $text    $base $text  $rosewater $mauve
-client.urgent               $peach    $base $peach $overlay0  $peach
-client.placeholder          $overlay0 $base $text  $overlay0  $overlay0
-client.background           $base
+smart_gaps on
+#Hide edge borders
+hide_edge_borders both
+
+#for_window [class="^.*"] border pixel 1
+
+# <colorclass> <border> <background> <text> <indicator> <child_border>
+#client.focused $blue    $base 	     $text  $blue 	$blue
+              
+# class                 border  backgr. text    indicator child_border
+client.focused          #24273a #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -252,10 +236,6 @@ bindsym $mod+Shift+Print exec --no-startup-id screenshot select
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpaper/wallpaper.png
 exec_always --no-startup-id picom -f 
 
-default_border pixel 1
-gaps inner 5
-gaps outer 1
-for_window [class="^.*"] border pixel 1
 
 ## bindsym $mod+Shift+g exec --no-startup-id /usr/local/bin/back4.sh auto $HOME/gif/wallpaper.gif
 

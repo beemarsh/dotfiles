@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Send a notification displaying that the battery is charging or discharging
+# Pass 1 as an argument for charging, 0 for discharging
+# Example usage: chargingnotify 1
+
+# Check if argument is passed
+[ $# != 1 ] && printf '0 or 1 must be passed as an argument.\nUsage: %s 0|1\n' "$0" && exit
+
+export XAUTHORITY=/home/iambee/.Xauthority
+export DISPLAY=:0
+export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
+
+BATTERY_CHARGING=$1
+
+# Replace BAT0 with your battery
+BATTERY_LEVEL=$(cat /sys/class/power_supply/BAT0/capacity)
+
+# Send notifications
+if [ "$BATTERY_CHARGING" -eq 1 ]; then
+	dunstify -a "charginnotify" -u low -r 9991 -h int:value:"$BATTERY_LEVEL" -i "charging" "Charging" "Battery currently at ${BATTERY_LEVEL}%" -t 2000
+elif [ "$BATTERY_CHARGING" -eq 0 ]; then
+	dunstify -a "charginnotify" -u low -r 9991 -h int:value:"$BATTERY_LEVEL" -i "discharging" "Discharging" "Battery currently at ${BATTERY_LEVEL}%" -t 2000
+fi
