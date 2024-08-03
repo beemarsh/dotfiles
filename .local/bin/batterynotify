@@ -27,11 +27,11 @@ fi
 
 # If the battery is charging and is full (and has not shown notification yet)
 if [ "$BATTERY_LEVEL" -gt $FULL_LEVEL ] && [ "$BATTERY_CHARGING" -eq 1 ] && [ ! -f $FULL_FILE ]; then
-	dunstify -a "batterynotify" -u low -r 9991 -h int:value:"$BATTERY_LEVEL" -i "charging" "Battery Fully Charged" "Battery is ${BATTERY_LEVEL}% charged" -t 3000
+	dunstify -a "batterynotify" -u low -r 9991 -h int:value:"$BATTERY_LEVEL" -i "charging" "Battery Fully Charged" "Battery is ${BATTERY_LEVEL}% charged" -t 8000
 	touch $FULL_FILE
 
 # If the battery is low and is not charging (and has not shown notification yet)
 elif [ "$BATTERY_LEVEL" -le $WARNING_LEVEL ] && [ "$BATTERY_CHARGING" -eq 0 ] && [ ! -f $EMPTY_FILE ]; then
-	dunstify -a "batterynotify" -u low -r 9991 -h int:value:"$BATTERY_LEVEL" -i "lowbattery" "Low Charge" "Only ${BATTERY_LEVEL}% charge remaining" -t 3000
+	dunstify -a "batterynotify" -u low -r 9991 -h int:value:"$BATTERY_LEVEL" -i "lowbattery" "Low Charge" "Only ${BATTERY_LEVEL}% charge remaining" -t 10000
 	touch $EMPTY_FILE
 fi

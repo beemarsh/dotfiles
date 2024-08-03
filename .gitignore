@@ -38,4 +38,5 @@
 !.config/systemd/user/*
 !.config/picom
 !.config/picom/*
-
+!.config/alacritty
+!.config/alacritty/*

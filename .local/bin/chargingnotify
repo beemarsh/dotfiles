@@ -18,7 +18,7 @@ BATTERY_LEVEL=$(cat /sys/class/power_supply/BAT0/capacity)
 
 # Send notifications
 if [ "$BATTERY_CHARGING" -eq 1 ]; then
-	dunstify -a "charginnotify" -u low -r 9991 -h int:value:"$BATTERY_LEVEL" -i "charging" "Charging" "Battery currently at ${BATTERY_LEVEL}%" -t 2000
+	dunstify -a "charginnotify" -u low -r 9991 -h int:value:"$BATTERY_LEVEL" -i "charging" "Charging" "Battery currently at ${BATTERY_LEVEL}%" -t 5000
 elif [ "$BATTERY_CHARGING" -eq 0 ]; then
-	dunstify -a "charginnotify" -u low -r 9991 -h int:value:"$BATTERY_LEVEL" -i "discharging" "Discharging" "Battery currently at ${BATTERY_LEVEL}%" -t 2000
+	dunstify -a "charginnotify" -u low -r 9991 -h int:value:"$BATTERY_LEVEL" -i "discharging" "Discharging" "Battery currently at ${BATTERY_LEVEL}%" -t 8000
 fi
