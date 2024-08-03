@@ -36,4 +36,6 @@
 !.config/systemd
 !.config/systemd/user
 !.config/systemd/user/*
+!.config/picom
+!.config/picom/*
 

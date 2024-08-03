@@ -23,27 +23,23 @@ full)
 	screenshot_file="$screenshot_dir/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-current.png"
 	maim --format=png -u "$screenshot_file"
 
-	# Add screenshot to CopyQ
-	copyq copy image/png - <"$screenshot_file"
-	send_notification "$1"
+	send_notification 
 	;;
 focus)
 	#Take Screenhot of the focused screen and put it in the clipboard
-
+	check_dir
 	# Capture screenshot using maim
 	screenshot_file="$screenshot_dir/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-focus.png"
 	maim -i --format=png --window $(xdotool getactivewindow) "$screenshot_file"
-	# Add screenshot to CopyQ
-	copyq copy image/png - <"$screenshot_file"
+
+	send_notification
 	;;
 select)
 	#Take Screenhot of the selected screen and put it in the clipboard
-
+	check_dir
 	# Capture screenshot using maim
 	screenshot_file="$screenshot_dir/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-selected.png"
 	maim --format=png --select -u "$screenshot_file"
-	# Add screenshot to CopyQ
-	copyq copy image/png - <"$screenshot_file"
-	send_notification up
+	send_notification 
 	;;
 esac

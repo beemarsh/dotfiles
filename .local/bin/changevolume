@@ -27,4 +27,13 @@ mute)
 		send_notification up
 	fi
 	;;
+micmute)
+	amixer set Capture toggle
+	mute_status=$(amixer get Capture | tail -n 1 | grep -c '\[on\]')
+	if [[ "$mute_status" == 0 ]]; then
+		dunstify -a "changemic" -t 2000 -r 9995 -u low -i "micmute" "Microphone" "Microphone currently muted"
+	else
+		dunstify -a "changemic" -t 2000 -r 9995 -u low -i "mic" "Microphone" "Microphone unmuted"
+	fi
+	;;
 esac

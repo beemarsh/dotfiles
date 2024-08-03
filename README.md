@@ -129,16 +129,53 @@ systemctl --user enable --now alert-battery.timer
 systemctl --user list-timers
 ```
 
+## Screen Lock and Lid Close
+
+I have used [xsecurelock](https://archlinux.org/packages/extra/x86_64/xsecurelock/) for screen locking.
+I have made a systemd service to lock before the lid closes. However, it should also be done by xss-lock as already coded in i3 config.
+
+Make a file in /etc/systemd/system/lock@.service
+Then, paste the following code.
+```bash
+[Unit]
+Description=Lock before Sleep
+Before=sleep.target
+
+[Service]
+User=%I
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/xsecurelock
+ExecStartPost=/usr/bin/sleep 1
+
+[Install]
+WantedBy=sleep.target
+```
+
+After making the file, enable and start the service.
+```bash
+sudo systemctl enable --now lock@username.service
+```
+
+> **Suspend on Lid Close**
+Open logind.conf on /etc/systemd and edit the file
+In the file, change HandleLidSwitch to suspend.
+
 
 ## Taking Screenshot
+I used [maim](https://man.archlinux.org/man/extra/maim/maim.1.en) for screenshot. The screenshot script is written in [.local/bin/screenshot](https://github.com/beemarsh/dotfiles/tree/main/.local/bin).
+The keybindings are available in the i3 config file.
+
+## Vim and NeoVim
 
 
 ## Common Applications
 - [GIMP](https://wiki.archlinux.org/title/GIMP) for Image Editing
 - [Feh](https://wiki.archlinux.org/title/Feh) for image view.
+- [Thunar](https://wiki.archlinux.org/title/Thunar) for file manager.
+- [Neovim](https://wiki.archlinux.org/title/Neovim) for code editor
+- [Picom](https://wiki.archlinux.org/title/Picom) for background blur and opacity.
 
 ## Some Issues
 - ### Firefox cannot save files
 > Change ownership of the directory. It might be set to root. Change ownership using chown to current user
-
-
