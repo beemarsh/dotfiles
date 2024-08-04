@@ -225,7 +225,7 @@ bindsym $mod+Shift+Print exec --no-startup-id $HOME/.local/bin/screenshot focus
 exec_always $HOME/.config/polybar/launch.sh
 
 #Picom for blur
-exec_always --no-startup-id picom -f
+exec_always --no-startup-id picom -f --no-fading-openclose
 
 #Automatically lock the screen using xsecurelock
 exec --no-startup-id xss-lock --transfer-sleep-lock -- xsecurelock

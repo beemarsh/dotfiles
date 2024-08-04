@@ -8,6 +8,9 @@ fi
 # Add local bin scripts to PATH
 export PATH=$HOME/.local/bin:$PATH
 
+# Add scripts installed by cargo
+export PATH=$HOME/.cargo/bin:$PATH
+
 # Aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'

@@ -40,3 +40,19 @@
 !.config/picom/*
 !.config/alacritty
 !.config/alacritty/*
+
+#Dont ignore neovim
+!.config/nvim
+!.config/nvim/*
+!.config/nvim/lua
+!.config/nvim/lua/*
+!.config/nvim/lua/config
+!.config/nvim/lua/config/*
+!.config/nvim/lua/config/lsp
+!.config/nvim/lua/config/lsp/*
+!.config/nvim/lua/config/lsp/settings
+!.config/nvim/lua/config/lsp/settings/*
+!.config/nvim/lua/helpers
+!.config/nvim/lua/helpers/*
+!.config/nvim/lua/plugins
+!.config/nvim/lua/plugins/*
