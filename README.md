@@ -1,6 +1,6 @@
 
 # Welcome to my setup!
-<iframe src="https://drive.google.com/file/d/1hhJZL677J1rtf7AENw0LsRBuUCaOWE7p/preview" width="640" height="480" allow="autoplay"></iframe>
+![Desktop Preview](./Pictures/Preview/arch_preview.png "Desktop Preview")
 
 Hi! I have configured the code for Arch on a HiDPI display. You can configure it according to your needs.
 

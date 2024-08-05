@@ -20,6 +20,14 @@
 !.icons
 !.icons/*
 
+# Don't ignore wallpapers
+!Pictures
+!Pictures/*
+!Pictures/Wallpapers
+!Pictures/Wallpapers/*
+!Pictures/Preview
+!Pictures/Preview/*
+
 #Don't ignore the following config files
 !.config
 !.config/i3
