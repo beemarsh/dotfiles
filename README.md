@@ -190,15 +190,43 @@ Package to Install:
 
 
 Plugins:
+- [lazy.nvim](https://lazy.folke.io/installation) for plugin management
 - [mason.nvim](https://github.com/williamboman/mason.nvim) for managing LSP servers
-- [treesitter.nvim](https://github.com/nvim-treesitter/nvim-treesitter)
+- [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim) For mason.nvim and lspconfig
+- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) LSP
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) Tree Sitter and Highlighting
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) fuzzy finder
 - [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim) Dashboard
 - [nvim-lualine](https://github.com/nvim-lualine/lualine.nvim?tab=readme-ov-file) Status Bar
 - [nvim-colorizer](https://github.com/NvChad/nvim-colorizer.lua) Colors display for color code
 - [twilight.nvim](https://github.com/folke/twilight.nvim) Dim inactive part of code
-- 
-- 
+- [nvim-bufdel](https://github.com/ojroques/nvim-bufdel) Deleting buffers
+- [catpuccin](https://github.com/catppuccin/nvim) Theme
+- [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) For buffer tabs
+- [cmp-buffer](https://github.com/hrsh7th/cmp-buffer) For buffer autocompletions
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) Nvim Auto Completion
+- [cmp-path](https://github.com/hrsh7th/cmp-path) Path Auto Completions
+- [cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline) Command Line Auto Completions
+- [cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua) Lua Auto Completions
+- [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp) LSP Auto Completions
+- [LuaSnip](https://github.com/L3MON4D3/LuaSnip) Snippet Engine
+- [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) Bunch of snippets
+- [comment.nvim](https://github.com/numToStr/Comment.nvim) Commenting
+- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) Git Decoration
+- [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) Indentation
+- [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim) Code Formatting
+- [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim) Code Formatting
+- [nvim-autopairs](https://github.com/windwp/nvim-autopairs) AutoPairing
+- [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua) File Explorer
+- [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) Comment based on cursor location
+- [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) For Icons
+- [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) Lua Functions Library
+- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) Fuzzy Finder
+- [telescope-media-files.nvim](https://github.com/nvim-telescope/telescope-media-files.nvim) Preview Media Files in Neovim
+- [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) Terminal Integration
+- [which-key.nvim](https://github.com/folke/which-key.nvim) Key Binding Help
+- [trouble.nvim](https://github.com/folke/trouble.nvim) Diagnostics
+
 
 
 

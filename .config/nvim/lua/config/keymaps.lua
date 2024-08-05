@@ -41,10 +41,9 @@ map("n", "<C-Right>", ":vertical resize -2<CR>", "Vertically decrease size of wi
 map("n", "<leader>fn", "<cmd>enew<cr>", "Create a New File")
 
 -- Deleting buffers
-local buffers = require("helpers.buffers")
-map("n", "<leader>db", buffers.delete_this, "Current buffer")
-map("n", "<leader>do", buffers.delete_others, "Other buffers")
-map("n", "<leader>da", buffers.delete_all, "All buffers")
+map("n", "<leader>db", "<cmd>BufDel<cr>", "Current buffer")
+map("n", "<leader>do", "<cmd>BufDelOthers<cr>", "Other buffers")
+map("n", "<leader>da", "<cmd>BufDelAll<cr>", "All buffers")
 
 -- Navigate buffers
 map("n", "<S-l>", ":bnext<CR>", "Next Buffer")
@@ -64,11 +63,11 @@ map("v", "<A-k>", ":m '<-2<cr>gv=gv", "Move up")
 
 -- Switch between light and dark modes
 map("n", "<leader>ut", function()
-  if vim.o.background == "dark" then
-    vim.o.background = "light"
-  else
-    vim.o.background = "dark"
-  end
+	if vim.o.background == "dark" then
+		vim.o.background = "light"
+	else
+		vim.o.background = "dark"
+	end
 end, "Toggle between light and dark themes")
 
 -- Clear after search
@@ -76,10 +75,10 @@ map("n", "<leader>ur", "<cmd>nohl<cr>", "Clear highlights")
 
 -- Telescope and Search
 map(
-  "n",
-  "<leader>sf",
-  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-  "Search files"
+	"n",
+	"<leader>sf",
+	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+	"Search files"
 )
 map("n", "<leader>st", "<cmd>Telescope live_grep<cr>", "Search text")
 map("n", "<leader>sb", "<cmd>Telescope buffers<cr>", "Search buffers")
