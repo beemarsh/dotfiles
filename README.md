@@ -1,4 +1,6 @@
+
 # Welcome to my setup!
+<iframe src="https://drive.google.com/file/d/1hhJZL677J1rtf7AENw0LsRBuUCaOWE7p/preview" width="640" height="480" allow="autoplay"></iframe>
 
 Hi! I have configured the code for Arch on a HiDPI display. You can configure it according to your needs.
 
@@ -167,6 +169,37 @@ I used [maim](https://man.archlinux.org/man/extra/maim/maim.1.en) for screenshot
 The keybindings are available in the i3 config file.
 
 ## Vim and NeoVim
+### Neovim
+Plugin Manager: [lazy.nvim](https://github.com/folke/lazy.nvim)
+
+Package to Install:
+- [unzip](https://archlinux.org/packages/extra/x86_64/unzip/)
+- [nodejs](https://wiki.archlinux.org/title/Node.js)
+- [npm](https://archlinux.org/packages/extra/any/npm/)
+- [python-pip](https://archlinux.org/packages/extra/any/python-pip/)
+- [lua](https://archlinux.org/packages/?name=lua)
+- [luarocks](https://archlinux.org/packages/extra/any/luarocks/)
+- [stylua](https://archlinux.org/packages/extra/x86_64/stylua/), Lua Code formatter
+- [eslint](https://archlinux.org/packages/extra/any/eslint/), linter for JS
+- [flake8](https://archlinux.org/packages/extra/any/flake8/), linter for python
+- [cpplint](https://archlinux.org/packages/extra/any/python-cpplint/), static code checker for C++
+- [black](https://archlinux.org/packages/extra/any/python-black/), python code formatter
+- [ripgrep](https://archlinux.org/packages/extra/x86_64/ripgrep/)
+- [tree-sitter](https://archlinux.org/packages/extra/x86_64/tree-sitter/).
+- 
+
+
+Plugins:
+- [mason.nvim](https://github.com/williamboman/mason.nvim) for managing LSP servers
+- [treesitter.nvim](https://github.com/nvim-treesitter/nvim-treesitter)
+- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) fuzzy finder
+- [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim) Dashboard
+- [nvim-lualine](https://github.com/nvim-lualine/lualine.nvim?tab=readme-ov-file) Status Bar
+- [nvim-colorizer](https://github.com/NvChad/nvim-colorizer.lua) Colors display for color code
+- [twilight.nvim](https://github.com/folke/twilight.nvim) Dim inactive part of code
+- 
+- 
+
 
 
 ## Common Applications

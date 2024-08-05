@@ -38,3 +38,12 @@ require("config.bufferline")
 
 -- Nvim terminal
 require("config.toggleterm")
+
+-- Indentation
+require("config.indent")
+
+-- Status bar
+require("config.lualine")
+
+--  Colorizer
+require("config.colorizer")
