@@ -7,7 +7,6 @@ Hi! I have configured the code for Arch on a HiDPI display. You can configure it
 ### X not Wayland
 >I chose X because I found it easy to configure with Nvidia drivers.
 
-
 ## Window Manger
 
 ### Ly
@@ -186,7 +185,7 @@ Package to Install:
 - [black](https://archlinux.org/packages/extra/any/python-black/), python code formatter
 - [ripgrep](https://archlinux.org/packages/extra/x86_64/ripgrep/)
 - [tree-sitter](https://archlinux.org/packages/extra/x86_64/tree-sitter/).
-- 
+> There may be other requirements. Just install them if any error pops up
 
 
 Plugins:
@@ -226,6 +225,9 @@ Plugins:
 - [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) Terminal Integration
 - [which-key.nvim](https://github.com/folke/which-key.nvim) Key Binding Help
 - [trouble.nvim](https://github.com/folke/trouble.nvim) Diagnostics
+- [cinnamon.nvim](https://github.com/declancm/cinnamon.nvim) For scrolling effect
+- [project.nvim](https://github.com/ahmedkhalf/project.nvim) Project Management
+- [compiler.nvim](https://github.com/Zeioth/compiler.nvim) Code Runner
 
 
 
@@ -236,6 +238,7 @@ Plugins:
 - [Thunar](https://wiki.archlinux.org/title/Thunar) for file manager.
 - [Neovim](https://wiki.archlinux.org/title/Neovim) for code editor
 - [Picom](https://wiki.archlinux.org/title/Picom) for background blur and opacity.
+- [Firefox](https://wiki.archlinux.org/title/Firefox)  Browser
 
 ## Some Issues
 - ### Firefox cannot save files

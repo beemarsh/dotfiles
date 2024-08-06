@@ -101,3 +101,13 @@ map("n", "<leader>gd", "<cmd>Gitsigns diffthis<cr>", "View Git Diff")
 map("n", "<M-f>", "<cmd>lua vim.lsp.buf.format()<cr>", "Format the code")
 -- Quit
 map("n", "<leader>qq", "<cmd>qa<cr>", "Quit all")
+
+-- Open Projects
+map("n","<C-o><C-p>","<cmd>Telescope projects<cr>","Open Recent Projects")
+
+-- Code Runner
+map('n', '<F5>', "<cmd>CompilerOpen<cr>", "Open Compile Options")
+-- Stop compiler when Pressing Shift + F5
+map('n', '<F17>', "<cmd>CompilerStop<cr>", "Stop Compiler")
+-- Toggle compiler results when Pressing Shift + F6
+map('n', '<F18>', "<cmd>CompilerToggleResults<cr>", "Open or Close Compiler Results")
