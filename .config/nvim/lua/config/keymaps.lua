@@ -103,11 +103,29 @@ map("n", "<M-f>", "<cmd>lua vim.lsp.buf.format()<cr>", "Format the code")
 map("n", "<leader>qq", "<cmd>qa<cr>", "Quit all")
 
 -- Open Projects
-map("n","<C-o><C-p>","<cmd>Telescope projects<cr>","Open Recent Projects")
+map("n", "<C-o><C-p>", "<cmd>Telescope projects<cr>", "Open Recent Projects")
+
+-- Debug
+
+map("n", "<F2>", "<cmd>DapToggleBreakpoint<CR>", "Add breakpoint at the line")
+map("n", "<F1>", "<cmd>DapContinue<CR>", "Start or continue the debugger")
+
+-- Shift + F1 to step into next line
+map("n", "<F13>", "<cmd>DapStepInto<CR>", "Step Into")
+
+-- Shift + F2 to step into next line
+map("n", "<F14>", "<cmd>DapStepOver<CR>", "Step Over")
+
+-- Ctrl +o + Ctrl + d to open debugger UI
+map("n", "<C-o><C-d>", "<cmd>lua require('dapui').toggle()<CR>", "Toggle DAP UI")
+
+-- Alt +k  to display debugger floating info 
+map("n", "<M-k>", "<cmd>lua require('dapui').eval()<CR>", "Toggle DAP UI")
 
 -- Code Runner
-map('n', '<F5>', "<cmd>CompilerOpen<cr>", "Open Compile Options")
+map("n", "<F5>", "<cmd>CompilerOpen<cr>", "Open Compile Options")
 -- Stop compiler when Pressing Shift + F5
-map('n', '<F17>', "<cmd>CompilerStop<cr>", "Stop Compiler")
+map("n", "<F17>", "<cmd>CompilerStop<cr>", "Stop Compiler")
+
 -- Toggle compiler results when Pressing Shift + F6
-map('n', '<F18>', "<cmd>CompilerToggleResults<cr>", "Open or Close Compiler Results")
+map("n", "<F18>", "<cmd>CompilerToggleResults<cr>", "Open or Close Compiler Results")

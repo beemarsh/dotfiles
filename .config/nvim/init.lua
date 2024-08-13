@@ -47,3 +47,6 @@ require("config.lualine")
 
 --  Colorizer
 require("config.colorizer")
+
+-- NVIM DAP and DAPUI
+require("config.dap")

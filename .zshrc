@@ -11,10 +11,14 @@ export PATH=$HOME/.local/bin:$PATH
 # Add scripts installed by cargo
 export PATH=$HOME/.cargo/bin:$PATH
 
+# Editor
+export EDITOR=nvim
+
 # Aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ll="ls -la"
+alias vi ="nvim"
 
 #For autocomplete
 fpath=(~/.config/zsh/zsh-completions/src $fpath)

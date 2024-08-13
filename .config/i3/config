@@ -145,8 +145,11 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
+# Run optimus-manager
+# exec /usr/bin/prime-offload
+
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+q exec i3 exit 
+bindsym $mod+Shift+q exec i3 exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -228,14 +231,17 @@ exec_always $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id picom -f --no-fading-openclose
 
 #Automatically lock the screen using xsecurelock
-exec --no-startup-id xss-lock --transfer-sleep-lock -- xsecurelock
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- xsecurelock
 
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/Wallpapers/wallpaper.jpg
 
 ## Allow tap from touchpad --> Change the Values inside the quotes based on the results from xinput
-exec xinput set-prop 11 327 1
+exec xinput set-prop 11 347 1
 
 # Clipboard Manager
 #Run the clipmenud before
 exec_always --no-startup-id clipmenud
 bindsym $mod+v exec --no-startup-id clipmenu
+
+# Nvidia
+#exec --no-startup-id /usr/bin/prime-offload

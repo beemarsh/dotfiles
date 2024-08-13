@@ -1,15 +1,15 @@
 local servers = {
-  "lua_ls", -- Lua
+	"lua_ls", -- Lua
 	"pyright", -- Python
-  "bashls", -- Bash
-  "clangd", -- C and C++
-  "cssls", -- CSS
-  "html", -- HTML
-  "jsonls", -- JSON
-  "tsserver", -- Java Script, TS and more
-  "marksman", -- Mark Down
-  "tailwindcss", -- Tail Wind CSS
-  "vuels", -- Vue
+	"bashls", -- Bash
+	"clangd", -- C and C++
+	"cssls", -- CSS
+	"html", -- HTML
+	"jsonls", -- JSON
+	"tsserver", -- Java Script, TS and more
+	"marksman", -- Mark Down
+	"tailwindcss", -- Tail Wind CSS
+	"vuels", -- Vue
 }
 
 local settings = {
@@ -23,8 +23,10 @@ local settings = {
 	},
 	log_level = vim.log.levels.INFO,
 	max_concurrent_installers = 4,
+	ensure_installed = {
+		"cpptools",
+	},
 }
-
 
 require("mason").setup(settings)
 
