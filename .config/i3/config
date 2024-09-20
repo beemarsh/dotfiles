@@ -236,7 +236,7 @@ exec_always --no-startup-id picom -f --no-fading-openclose
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/Wallpapers/wallpaper.jpg
 
 ## Allow tap from touchpad --> Change the Values inside the quotes based on the results from xinput
-exec xinput set-prop 11 347 1
+exec xinput set-prop 15 336 1
 
 # Clipboard Manager
 #Run the clipmenud before
