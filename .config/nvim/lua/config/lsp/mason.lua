@@ -10,6 +10,7 @@ local servers = {
 	"marksman", -- Mark Down
 	"tailwindcss", -- Tail Wind CSS
 	"vuels", -- Vue
+  "cmake"
 }
 
 local settings = {

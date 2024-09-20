@@ -18,7 +18,7 @@ export EDITOR=nvim
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ll="ls -la"
-alias vi ="nvim"
+alias vi ="vim"
 
 #For autocomplete
 fpath=(~/.config/zsh/zsh-completions/src $fpath)
