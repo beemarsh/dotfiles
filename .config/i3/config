@@ -232,6 +232,8 @@ exec_always --no-startup-id picom -f --no-fading-openclose
 
 #Automatically lock the screen using xsecurelock
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- xsecurelock
+exec --no-startup-id xset s 120 5
+exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/Wallpapers/wallpaper.jpg
 

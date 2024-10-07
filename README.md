@@ -1,4 +1,3 @@
-
 # Welcome to my setup!
 ![Desktop Preview](./Pictures/Preview/arch_preview.png "Desktop Preview")
 
@@ -135,32 +134,23 @@ systemctl --user list-timers
 I have used [xsecurelock](https://archlinux.org/packages/extra/x86_64/xsecurelock/) for screen locking.
 I have made a systemd service to lock before the lid closes. However, it should also be done by xss-lock as already coded in i3 config.
 
-Make a file in /etc/systemd/system/lock@.service
-Then, paste the following code.
+I have added the following code in /usr/lib/systemd/system-sleep/xsecurelock and marked the file as executable.  This will ensure that it will lock before suspend/hibernate. The process is described in Github link: [xsecurelock](https://github.com/google/xsecurelock)
+
 ```bash
-[Unit]
-Description=Lock before Sleep
-Before=sleep.target
-
-[Service]
-User=%I
-Type=forking
-Environment=DISPLAY=:0
-ExecStart=/usr/bin/xsecurelock
-ExecStartPost=/usr/bin/sleep 1
-
-[Install]
-WantedBy=sleep.target
+#!/bin/bash
+if [[ "$1" = "post" ]] ; then
+  pkill -x -USR2 xsecurelock
+fi
+exit 0
 ```
 
-After making the file, enable and start the service.
+For automatic locking, I used xss-lock and added the following code to i3 config.
 ```bash
-sudo systemctl enable --now lock@username.service
+exec --no-startup-id xset s 300 5
+exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 ```
 
-> **Suspend on Lid Close**
-Open logind.conf on /etc/systemd and edit the file
-In the file, change HandleLidSwitch to suspend.
+> Note: Make sure to disable secure boot on windows if dual boot. It caused problem during shutdown and recovery from suspend.
 
 
 ## Taking Screenshot
