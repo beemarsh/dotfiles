@@ -1,3 +1,10 @@
+# New DOCS (HyPRLand)
+
+Currently using this theme (HyDE): https://github.com/HyDE-Project/HyDE
+
+There are some tweaks that I did with keybindings and maybe something else as well in /.config/hypr
+
+
 # Welcome to my setup!
 ![Desktop Preview](./Pictures/Preview/arch_preview.png "Desktop Preview")
 
