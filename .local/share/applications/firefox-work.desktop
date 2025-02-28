@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Work Firefox
+Comment=Work Firefox
+Exec=firefox -P "Work" -no-remote
+Icon=/home/iambee/.icons/firefox_work.png
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;

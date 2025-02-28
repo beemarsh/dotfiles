@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Dev Firefox
+Comment=Dev Firefox
+Exec=firefox -P "Dev" -no-remote
+Icon=/home/iambee/.icons/firefox_dev.png
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;

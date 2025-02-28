@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=School Firefox
+Comment=School Firefox
+Exec=firefox -P "School" -no-remote
+Icon=/home/iambee/.icons/firefox_education.png
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;
